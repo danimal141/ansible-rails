@@ -1,0 +1,26 @@
+- name: update apt cache
+  apt: update_cache=yes
+  sudo: yes
+
+- name: upgrade existing linux packages
+  apt: upgrade=dist
+  sudo: yes
+
+- name: install basic packages
+  apt: name={{ item }} state=present
+  sudo: yes
+  with_items:
+    - vim
+    - tmux
+    - dstat
+    - sysv-rc-conf
+    - mtr
+    - apt-file
+    - iotop
+    - sysstat
+    - ntp
+
+- name: disallow root SSH access
+  action: lineinfile dest=/etc/ssh/sshd_config regexp="^PermitRootLogin" line="PermitRootLogin no" state=present
+  sudo: yes
+  notify: restart_sshd

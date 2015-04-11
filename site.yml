@@ -1,0 +1,18 @@
+- hosts: all
+  vars_files:
+    - vars/defaults.yml
+  sudo: yes
+  roles:
+    - deploy_user:
+      role: deploy_user
+      tags: ['deploy_user']
+
+- hosts: all
+  vars_files:
+    - vars/defaults.yml
+    - vars/sample_app.yml
+  remote_user: '{{ deploy }}'
+  roles:
+    - base:
+      role: base
+      tags: ['base']
