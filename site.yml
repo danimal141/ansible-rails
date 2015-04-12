@@ -22,3 +22,9 @@
     - ruby:
       role: ruby
       tags: ['ruby']
+    - ruby:
+      role: ruby
+      tags: ['ruby']
+    - postgresql:
+      role: postgresql
+      tags: ['postgresql']
