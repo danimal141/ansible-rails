@@ -2,4 +2,3 @@ deploy: danimal141
 password: $6$rounds=100000$YW5j5IBWlCHJI/3s$G.G1x7xECjhFCRjTOa3CmiyenUxy0h0mXkp1YA7hxV43w0Qaf6T7SqP9UN4NUK0z5Y8aGjaE7g3Vvd9s1lVFv.
 
 ruby_version: 2.2.0
-rbenv_root: /home/{{ deploy_user }}/.rbenv

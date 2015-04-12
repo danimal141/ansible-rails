@@ -16,3 +16,9 @@
     - base:
       role: base
       tags: ['base']
+    - rbenv:
+      role: rbenv
+      tags: ['rbenv']
+    - ruby:
+      role: ruby
+      tags: ['ruby']

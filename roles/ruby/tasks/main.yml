@@ -1,0 +1,18 @@
+- name: check if target ruby is installed
+  shell: bash -lc "rbenv versions | grep {{ ruby_version }} | tr '*' ' ' | sed -e 's/\s\+//' | cut -f1 -d' '"
+  # This is just a 'get' operation, so can't really change.
+  # The rc from this shell does indicate to ansible that it's changed, so let's suppress that.
+  # http://docs.ansible.com/playbooks_error_handling.html#overriding-the-changed-result
+  changed_when: false
+  register: ruby_installed
+
+- name: rbenv install {{ ruby_version }}
+  shell: bash -lc "MAKE_OPTS='-j 4' rbenv install {{ ruby_version }}"
+  when: ruby_installed|failed
+
+- name: set global ruby_version
+  shell: bash -lc "rbenv global {{ ruby_version }}"
+  when: ruby_installed|failed
+
+- name: install bundler
+  shell: bash -lc "gem install bundle bundler"

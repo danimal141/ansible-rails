@@ -1,0 +1,2 @@
+- name: set global ruby_version
+  shell: bash -lc "rbenv rehash {{ ruby_version }}"
