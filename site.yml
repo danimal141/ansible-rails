@@ -28,3 +28,6 @@
     - postgresql:
       role: postgresql
       tags: ['postgresql']
+    - nginx:
+      role: nginx
+      tags: ['nginx']

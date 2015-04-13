@@ -17,6 +17,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       ansible.inventory_path = 'hosts_develop'
       ansible.verbose = 'vvvv'
       ansible.ask_sudo_pass = true
+      #ansible.tags = 'nginx' # To run individual roles
     end
   end
 end
