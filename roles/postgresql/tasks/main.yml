@@ -18,13 +18,3 @@
 - name: restart postgresql
   service: name=postgresql state=started
   sudo: yes
-
-- name: create postgresql user
-  postgresql_user:
-    name: "{{ deploy }}"
-    password: "{{ password }}"
-    port: "{{ postgresql_port }}"
-    state: present
-    login_user: postgres
-  sudo: yes
-  sudo_user: postgres
