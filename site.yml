@@ -10,7 +10,6 @@
 - hosts: all
   vars_files:
     - vars/defaults.yml
-    - vars/sample_app.yml
   remote_user: '{{ deploy }}'
   roles:
     - base:
@@ -19,9 +18,6 @@
     - rbenv:
       role: rbenv
       tags: ['rbenv']
-    - ruby:
-      role: ruby
-      tags: ['ruby']
     - ruby:
       role: ruby
       tags: ['ruby']

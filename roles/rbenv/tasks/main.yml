@@ -24,7 +24,7 @@
 - name: add rbenv to ~/.bash_profile
   lineinfile: dest=~{{ deploy }}/.bash_profile regexp="rbenv" insertafter=EOF line="source ~/.bash.d/50_rbenv.bash" create=yes owner={{deploy}}
 
-- name: create ~/.rbenv/plugns/ (if not exists)
+- name: create ~/.rbenv/plugins/ (if not exists)
   file: path=~{{ deploy }}/.rbenv/plugins/ owner={{ deploy }} group={{ deploy }} mode=0755 state=directory
 
 - name: clone ruby-build repo
