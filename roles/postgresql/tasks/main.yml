@@ -12,6 +12,7 @@
   with_items:
     - python-pycurl
     - python-psycopg2
+    - libpq-dev
     - "postgresql-{{ postgresql_version }}"
 
 - name: restart postgresql
